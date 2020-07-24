@@ -28,7 +28,6 @@ async function deleteMsg(req, res) {
 
 async function updateChat(chat) {
     await chatService.update(chat)
-    res.json(msg)
 }
 
 
