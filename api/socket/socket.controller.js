@@ -27,7 +27,8 @@ async function deleteMsg(req, res) {
 }
 
 async function updateChat(chat) {
-    await chatService.update(chat)
+    var newChat = await chatService.update(chat)
+    return newChat
 }
 
 

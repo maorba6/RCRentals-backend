@@ -9,9 +9,9 @@ function connectSockets(io) {
             console.log(newChat);
             socket.emit('gotChat', newChat)
         })
-        socket.on('chat message', (chat) => {
-            updateChat(chat)
-            io.emit('messege recieved', chat)
+        socket.on('chat message', async(chat) => {
+            var newChat = await updateChat(chat)
+            io.emit('messege recieved', newChat)
         })
     })
 }
