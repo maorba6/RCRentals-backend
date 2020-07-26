@@ -40,11 +40,11 @@ async function getById(userId) {
     try {
         const user = await collection.findOne({ "_id": ObjectId(userId) })
         delete user.password
-        // user.givenOrders = await orderService.query({ byUserId: ObjectId(user._id) })
-        // user.givenOrders = user.givenOrders.map(order => {
-        // delete order.byUser
-        // return order
-        // })
+            // user.givenOrders = await orderService.query({ byUserId: ObjectId(user._id) })
+            // user.givenOrders = user.givenOrders.map(order => {
+            // delete order.byUser
+            // return order
+            // })
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${userId}`)
@@ -73,13 +73,10 @@ async function remove(userId) {
 }
 
 async function update(user) {
-    console.log('update');
     const collection = await dbService.getCollection('user')
     user._id = ObjectId(user._id);
-    console.log('id:', user._id);
     try {
         await collection.replaceOne({ "_id": user._id }, { $set: user })
-        console.log(user);
         return user
     } catch (err) {
         console.log(`ERROR: cannot update user ${user._id}`)

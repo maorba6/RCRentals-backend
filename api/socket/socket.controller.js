@@ -2,7 +2,6 @@ const chatService = require('./socket.service')
 const logger = require('../../services/logger.service')
 
 async function getChat(req, res) {
-    console.log(req.query);
     const chat = await chatService.getById(req.params.id)
     res.json(chat)
 }

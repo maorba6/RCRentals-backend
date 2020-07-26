@@ -13,12 +13,9 @@ module.exports = {
 async function query(filterBy = {}) {
 
     const criteria = _buildCriteria(filterBy)
-
-    console.log(criteria);
     const collection = await dbService.getCollection('chats')
     try {
         const msgs = await collection.find(criteria).toArray();
-        console.log('msgsservc', msgs);
         return msgs
     } catch (err) {
         console.log('ERROR: cannot find msgs')
