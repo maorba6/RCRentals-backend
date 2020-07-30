@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f6411d657a4d4c466e59f0eed1dade36.js"
+  "/precache-manifest.76af925d3c00cf3788c8a9a2407761e0.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "rcrentals"});
